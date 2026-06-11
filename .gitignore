@@ -19,3 +19,5 @@ backups/
 *.bak
 venv/
 *.egg-info/
+mcpb-build/
+*.mcpb

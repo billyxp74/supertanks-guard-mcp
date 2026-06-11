@@ -3,7 +3,7 @@ navn: Super Tanks Guard MCP
 type: kndwazc
 status: aktiv
 ballen_hos: william
-neste_steg: (fyll inn)
+neste_steg: Vente på MCPB-katalog-svar; vurdere Node-wrapper + MIT på tynt lag om Anthropic ber om det
 oppretta: 2026-06-11
 ---
 

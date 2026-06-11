@@ -17,3 +17,5 @@ graphify-out/
 backups/
 *.log
 *.bak
+venv/
+*.egg-info/

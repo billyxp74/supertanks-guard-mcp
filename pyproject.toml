@@ -1,0 +1,31 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "supertanks-guard-mcp"
+version = "0.1.0"
+description = "Human-in-the-loop guardrails for AI agents over MCP: static code scanning, prompt-injection screening, deny-by-default action gating with human approval, and a tamper-evident audit log."
+readme = "README.md"
+license = { text = "Apache-2.0" }
+requires-python = ">=3.10"
+authors = [{ name = "KNDW Shelter Solutions AS", email = "wlp@kndw.no" }]
+keywords = ["mcp", "ai-safety", "guardrails", "agents", "security", "human-in-the-loop"]
+dependencies = [
+    "mcp>=1.0",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8"]
+
+[project.scripts]
+supertanks-guard-mcp = "supertanks_guard.server:main"
+supertanks-guard = "supertanks_guard.cli:main"
+
+[project.urls]
+Homepage = "https://supertanks.kndw.no"
+Source = "https://github.com/billyxp74/supertanks-guard-mcp"
+Upstream = "https://github.com/billyxp74/super-tanks"
+
+[tool.setuptools.packages.find]
+include = ["supertanks_guard*"]

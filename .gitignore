@@ -1,0 +1,19 @@
+# Hemmelegheiter og data skal ALDRI i git
+.env
+.env.*
+*.secret
+.unlock_secret
+*secret*
+*password*
+*.pem
+*.key
+*.db
+*.sqlite3
+# Køyretid og støy
+venv/
+__pycache__/
+node_modules/
+graphify-out/
+backups/
+*.log
+*.bak

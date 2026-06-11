@@ -1,0 +1,39 @@
+{
+  "manifest_version": "0.2",
+  "name": "supertanks-guard",
+  "display_name": "Super Tanks Guard",
+  "version": "0.1.0",
+  "description": "Human-in-the-loop guardrails for AI agents: static code scanning, prompt-injection screening, deny-by-default action gating with human approval, and a tamper-evident audit log.",
+  "long_description": "Gives Claude four safety capabilities: (1) guard_scan_code — AST scan of agent-generated Python before execution; (2) guard_scan_text — prompt-injection screening of untrusted text; (3) guard_gate_action/guard_gate_status — risky actions stay pending until a human approves them from a terminal, approvals expire; (4) guard_audit_log — append-only audit trail with SHA-256 hash chain. Everything runs locally. Scanner and filter are vendored from the open-source Super Tanks governance framework (independent security audit by 7ASecurity in progress).",
+  "author": {
+    "name": "KNDW Shelter Solutions AS",
+    "email": "wlp@kndw.no",
+    "url": "https://github.com/billyxp74"
+  },
+  "homepage": "https://supertanks.kndw.no",
+  "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/billyxp74/supertanks-guard-mcp"
+  },
+  "server": {
+    "type": "python",
+    "entry_point": "supertanks_guard/server.py",
+    "mcp_config": {
+      "command": "uvx",
+      "args": [
+        "--from",
+        "git+https://github.com/billyxp74/supertanks-guard-mcp",
+        "supertanks-guard-mcp"
+      ]
+    }
+  },
+  "tools": [
+    { "name": "guard_scan_code", "description": "Statically scan Python code before executing it" },
+    { "name": "guard_scan_text", "description": "Screen untrusted text for prompt injection" },
+    { "name": "guard_gate_action", "description": "Request human approval for a risky action (deny-by-default, TTL)" },
+    { "name": "guard_gate_status", "description": "Check whether a gated action was approved" },
+    { "name": "guard_audit_log", "description": "Read the tamper-evident audit log" }
+  ],
+  "keywords": ["security", "guardrails", "human-in-the-loop", "ai-safety", "audit"]
+}
